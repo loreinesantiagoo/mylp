@@ -1,6 +1,22 @@
 .thumbnail {
-	height: 48px;
+	height: 52px;
 	border-radius: 10px;
 	border: 1px darkgray solid;
 	margin-right: 8px;
+}
+
+.ratings {
+	font-size: 0.9em;
+	font-style: italic;
+	display: block;
+}
+
+.album-name {
+	font-size: 1.1.em;
+	font-weight: bold;
+}
+
+.artist-name {
+	display: block;
+	font-size: 0.9em;
 }
