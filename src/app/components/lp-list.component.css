@@ -1,0 +1,6 @@
+.thumbnail {
+	height: 48px;
+	border-radius: 10px;
+	border: 1px darkgray solid;
+	margin-right: 8px;
+}

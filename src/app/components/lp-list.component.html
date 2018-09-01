@@ -1,0 +1,11 @@
+<mat-list *ngIf="lpList.length > 0">
+  <h2 mat-subheader>My LPs</h2>
+  <mat-list-item *ngFor="let lp of lpList"
+    fxLayout="row column" fxLayoutGap="5px"
+  >
+    <div>
+      <img [src]="lp.albumCover" class="thumbnail">
+    </div>
+    {{ lp.albumName }}
+  </mat-list-item>
+</mat-list>

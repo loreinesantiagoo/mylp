@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LP } from './model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mylp';
+
+  lpList: LP[] = [];
+
+  addToList($event: LP) {
+    this.lpList.unshift($event);
+  }
 }

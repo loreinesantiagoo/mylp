@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-content>
+    <form #lpForm="ngForm" (ngSubmit)="insertLP()"
+        fxLayout="column row" fxLayoutGap="10px">
+      <mat-form-field>
+        <input type="text" name="albumName" placeholder="Album's name" 
+            required ngModel matInput>
+        <mat-hint>Enter the album's name</mat-hint>
+        <mat-error>Please enter an album name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" name="artistName" placeholder="Artist's name" 
+            required ngModel matInput>
+        <mat-hint>Name of the artist who performed the album</mat-hint>
+        <mat-error>Please enter the artist's name</mat-error>
+      </mat-form-field>
+
+      <div fxLayout="column row">
+        <span>Ratings: {{ ratings.value }}</span>
+        <mat-slider name="ratings" min="1" max="10" step="1"
+          [ngModel]="1" #ratings="ngModel" 
+          [thumbLabel]="ratings.value" tickInterval="1">
+        </mat-slider>
+      </div>
+
+      <mat-form-field>
+        <input type="text" name="albumCover" placeholder="Album's cover" 
+          ngModel matInput>
+        <mat-hint>Album's cover image URL</mat-hint>
+      </mat-form-field>
+
+      <div fxLayout="row column" fxLayoutAlign="space-between">
+        <button type="button" mat-button mat-stroked-button>
+          <mat-icon>clear</mat-icon> Clear 
+        </button>
+        <button type="submit" mat-button mat-raised-button color="accent"
+            [disabled]="lpForm.invalid">
+          <mat-icon>add</mat-icon> Add
+        </button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
