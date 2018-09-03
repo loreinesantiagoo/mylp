@@ -14,12 +14,12 @@ export class LpListComponent implements OnInit {
   @Input()
   lpList: LP[] = []
 
-  canShare = !!navigator['share'];
+  canShare = false;
 
   constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() { 
-    console.log('canShare: ', this.canShare);
+    this.canShare = !!navigator['share'];
   }
 
   share(index: number) {
