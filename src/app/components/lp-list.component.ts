@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+
+
 import { LP } from '../model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-lp-list',
@@ -13,14 +16,19 @@ export class LpListComponent implements OnInit {
 
   canShare = !!navigator['share'];
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() { 
     console.log('canShare: ', this.canShare);
   }
 
   share(index: number) {
-    console.log('share = ', this.lpList[index]);
+    navigator['share']({
+      title: this.lpList[index].albumName,
+      text: this.lpList[index].artistName,
+      url: this.lpList[index].albumCover
+    })
+    .then(() => { this.snackBar.open('Shared'); })
   }
 
 }
