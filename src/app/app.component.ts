@@ -20,6 +20,11 @@ export class AppComponent {
     },
 
     {
+      albumName: "A Night at the Opera", artistName: "Queen",
+      ratings: 9, albumCover: 'assets/queen.jpg'
+    },
+
+    {
       albumName: 'Rumours', artistName: 'Fleetwood Mac',
       ratings: 9, albumCover: 'assets/fleetwood_mac.jpeg'
     },
@@ -27,6 +32,11 @@ export class AppComponent {
     {
       albumName: 'El Diablo  Suelto', artistName: 'John Williams',
       ratings: 9, albumCover: 'assets/john_williams.jpg'
+    },
+
+    {
+      albumName: 'Abbey Road', artistName: 'Beatles',
+      ratings: 9, albumCover: 'assets/beatles.jpg'
     },
 
     {

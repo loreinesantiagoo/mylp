@@ -11,8 +11,16 @@ export class LpListComponent implements OnInit {
   @Input()
   lpList: LP[] = []
 
+  canShare = !!navigator['share'];
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    console.log('canShare: ', this.canShare);
+  }
+
+  share(index: number) {
+    console.log('share = ', this.lpList[index]);
+  }
 
 }

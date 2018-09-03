@@ -1,17 +1,23 @@
 <mat-list *ngIf="lpList.length > 0" 
     fxLayout="column row" fxLayoutGap="10px" fxLayoutAlign="start">
   <h2 mat-subheader>My LPs</h2>
-  <mat-list-item *ngFor="let lp of lpList" fxLayout="column row">
+  <mat-list-item *ngFor="let lp of lpList; let i = index" 
+      fxLayout="column row" fxLayoutAlign="start start">
     <div> <img [src]="lp.albumCover" class="thumbnail"> </div>
-    <div fxLayout="column row" fxLayoutAlign="start stretch">
-      <div fxLayoutAlign="space-between stretch">
+
+    <div fxLayout="column row" fxLayoutAlign="start">
+      <div fxLayout="row column" fxLayoutAlign="start space-between">
         <span class="album-name"> {{ lp.albumName }} </span>
-        <mat-icon color="warn">share</mat-icon>
+        <button type="button" mat-icon-button *ngIf="canShare" (click)="share(i)">
+          <mat-icon color="warn">share</mat-icon>
+        </button>
       </div>
-      <div fxLayoutAlign="space-between stretch">
+
+      <div fxLayout="row column" fxLayoutAlign="space-between">
         <span class="artist-name">{{ lp.artistName }}</span>
         <span class="ratings">Ratings: {{ lp.ratings }}</span>
       </div>
     </div>
+
   </mat-list-item>
 </mat-list>
